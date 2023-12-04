@@ -10,7 +10,10 @@
 
 - Check here: [https://allenai.github.io/re-align/just_eval.html#leaderboard](https://allenai.github.io/re-align/just_eval.html#leaderboard)
 
-## Multiple Aspects 
+### Data distribution 
+![Data distribution](https://allenai.github.io/re-align/images/eval_1.png)
+
+### Multiple Aspects 
 
 ![Multiple Aspects](https://allenai.github.io/re-align/images/eval_2.png)
  
