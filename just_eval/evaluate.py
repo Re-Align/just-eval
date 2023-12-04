@@ -60,10 +60,7 @@ def report(results, mode, args):
         if "_multi" not in mode and "_safety" not in mode:
             scores = []
         else:
-            scores = {}
-        if "+ref" in mode:
-            lens_ref = []
-        
+            scores = {} 
         eval_res = {}
         
         for item in results:
@@ -81,9 +78,6 @@ def report(results, mode, args):
                         if result["score"] == "N/A":
                             result["score"] = 5.0
                         scores[aspect].append(float(result["score"]))
-                if mode.endswith("+ref"):
-                    d["len_ref"] = len(d["output_ref"].split())
-                    lens_ref.append(item["len_ref"])
                 
                 cnt += 1
         if "_multi" not in mode and "_safety" not in mode:
@@ -94,10 +88,7 @@ def report(results, mode, args):
                 eval_res[aspect + "_mean"] = float(np.mean(score_list))
                 # eval_res[aspect + "_std"] = float(np.std(score_list))
                 
-        if "+ref" in mode: 
-            eval_res["avg_lens"] = {"cand": float(np.mean(lens_cand)), "ref": float(np.mean(lens_ref))}
-        else:
-            eval_res["avg_lens"] = float(np.mean(lens_cand))
+        eval_res["avg_lens"] = float(np.mean(lens_cand))
     
     eval_res["output_file"] = args.output_file
     return eval_res
@@ -200,11 +191,7 @@ def score_eval(args):
     results = []
     with open(args.first_file, 'r') as f:
         candidates = json.load(f) 
-    if "+ref" in args.mode:
-        with open(args.reference_file, 'r') as f:
-            references = json.load(f) 
-    else:
-        references = [None] * len(candidates)
+    references = [None] * len(candidates)
         
     L = min(len(candidates), len(references))
     if args.end_idx < 0:
