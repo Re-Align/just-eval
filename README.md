@@ -1,15 +1,19 @@
 # Just-Eval: A simple GPT-based evaluation tool for multi-aspect, interpretable assessment of LLMs.
 
 
-## Suggested dataset
-
-Check out our data on 🤗 Hugging Face: [**re-align/just-eval-instruct**](https://huggingface.co/datasets/re-align/just-eval-instruct)
+## Background 
 
 
-## Leaderboard
+### Suggested dataset
 
-Check here: [https://allenai.github.io/re-align/just_eval.html#leaderboard](https://allenai.github.io/re-align/just_eval.html#leaderboard)
+- Check out our data on 🤗 Hugging Face: [**re-align/just-eval-instruct**](https://huggingface.co/datasets/re-align/just-eval-instruct)
 
+- Check here: [https://allenai.github.io/re-align/just_eval.html#leaderboard](https://allenai.github.io/re-align/just_eval.html#leaderboard)
+
+## Multiple Aspects 
+
+![Multiple Aspects](https://allenai.github.io/re-align/images/eval_2.png)
+ 
 
 ## Installation 
 
@@ -24,11 +28,12 @@ or
 pip install git+https://github.com/Re-Align/just-eval.git
 ```
 
-## Setup OpenAI API Key
+### Setup OpenAI API Key
 
 ```bash 
 export OPENAI_API_KEY=<your secret key>
 ```
+
 
 
 ## Scoring with Multiple Aspects (Helpfulness, Clarity, Factuality, Depth, and Engagement.)
@@ -64,8 +69,9 @@ cat example_data/eval_outputs/1.safety.score_safety.chatgpt.eval_res.json
 ``` 
 
 
+## Examples 
 
-## Example Input Format 
+### Example Input Format 
 Please check [`example_data/example_generation_1.json`](example_data/example_generation_1.json) file for an example. 
 ```json 
 [
@@ -82,7 +88,7 @@ Please check [`example_data/example_generation_1.json`](example_data/example_gen
 ]
 ```
 
-## Example Output Format 
+### Example Output Format 
 Please check [`example_data/eval_outputs/1.score_multi.gpt-4.json`](example_data/eval_outputs/1.score_multi.gpt-4.json) file for an example.
 ```json 
 
@@ -110,3 +116,10 @@ Please check [`example_data/eval_outputs/1.score_multi.gpt-4.json`](example_data
 
 ```
 
+
+## Case studies
+
+![Case study](https://allenai.github.io/re-align/images/case_1.png)
+
+
+## Citation 
