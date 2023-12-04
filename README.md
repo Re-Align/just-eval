@@ -1,4 +1,15 @@
-# just_eval
+# Just-Eval: A simple GPT-based evaluation tool for multi-aspect, interpretable assessment of LLMs.
+
+
+## Suggested dataset
+
+[re-align/just-eval-instruct on Hugging Face](https://huggingface.co/datasets/re-align/just-eval-instruct)
+
+
+## Leaderboard
+
+Check here: [https://allenai.github.io/re-align/just_eval.html#leaderboard](https://allenai.github.io/re-align/just_eval.html#leaderboard)
+
 
 ## Installation 
 
