@@ -1,4 +1,4 @@
-# Just-Eval: Multi-aspect, interpretable evaluation of Alignment
+# Just-Eval: Evaluating LLM Alignment with Multiple Aspects
 
 > This is part of the Re-Align project by AI2 Mosaic. Please find more information on our website: [https://allenai.github.io/re-align/](https://allenai.github.io/re-align/index.html).
 
