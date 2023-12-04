@@ -12,16 +12,9 @@ from concurrent.futures import ThreadPoolExecutor
 from .utils import (
     better_json_loads,
     retry_handler, 
-    openai_chat_request,
-    PAIRWISE_TEMPLATE,
-    # SCORE_TEMPLATE, 
-    # SCORE_REF_TEMPLATE,
+    openai_chat_request, 
     MULTI_SCORE_TEMPLATE,
-    SAFETY_SCORE_TEMPLATE,
-    # MULTI_SCORE_REF_TEMPLATE,
-    MULTI_PAIRWISE_TEMPLATE,
-    TAG_DATA_TEMPLATE,
-    TAG_DATA_TEMPLATE_V2
+    SAFETY_SCORE_TEMPLATE, 
 )
 import numpy as np 
  
