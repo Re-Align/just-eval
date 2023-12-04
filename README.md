@@ -5,9 +5,9 @@
 
 ## Just-Eval-Instruct Dataset 
 
-- Check out our data on 🤗 Hugging Face: [**re-align/just-eval-instruct**](https://huggingface.co/datasets/re-align/just-eval-instruct)
+- 💾 Check out our data on 🤗 Hugging Face: [**re-align/just-eval-instruct**](https://huggingface.co/datasets/re-align/just-eval-instruct)
 
-- Check here for the leaderboard: [https://allenai.github.io/re-align/just_eval.html#leaderboard](https://allenai.github.io/re-align/just_eval.html#leaderboard)
+- 📊 Check here for the leaderboard: [https://allenai.github.io/re-align/just_eval.html#leaderboard](https://allenai.github.io/re-align/just_eval.html#leaderboard)
 
 ### Data distribution 
 ![Data distribution](https://allenai.github.io/re-align/images/eval_1.png)
