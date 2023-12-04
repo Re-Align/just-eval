@@ -1,4 +1,4 @@
-# Just-Eval: A simple GPT-based evaluation tool for multi-aspect, interpretable assessment of LLMs.
+# Just-Eval: Multi-aspect, interpretable evaluation of LLM Alignment
 
 > This is part of the Re-Align project by AI2 Mosaic. Please find more information on our website: [https://allenai.github.io/re-align/](https://allenai.github.io/re-align/index.html).
 
