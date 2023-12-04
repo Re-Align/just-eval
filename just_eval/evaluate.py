@@ -54,52 +54,7 @@ def get_args():
 
 def report(results, mode, args):
     
-    if mode.startswith("pairwise"):
-        cnt = 0
-        same_cnt = 0
-        eval_res = {}
-        lens = {}
-        for item in results:
-            if "parsed_result" in item:
-                d = item
-                d["len_A"] = len(d["output_A"].split())
-                d["len_B"] = len(d["output_B"].split())
-                if mode == "pairwise":
-                    label = item["parsed_result"]["preference"]
-                    if label.upper() in ["A", "B", "SAME"]:
-                        cnt += 1 
-                        if label.upper() == "SAME":
-                            same_cnt += 1
-                            eval_res["same"] = 1 + eval_res.get("same", 0)
-                        else:
-                            winner = item[f"generator_{label}"]
-                            eval_res[winner] = eval_res.get(winner, 0) + 1
-                elif mode == "pairwise_multi":
-                    for aspect, aspect_result in item["parsed_result"].items():
-                        label = aspect_result["preference"]
-                        if aspect not in eval_res:
-                            eval_res[aspect] = {"same": 0}
-                        if label.upper() in ["A", "B", "SAME"]:
-                            cnt += 1 
-                        if label.upper() == "SAME":
-                            same_cnt += 1
-                            eval_res[aspect]["same"] += 1
-                        else:
-                            winner = item[f"generator_{label}"]
-                            eval_res[aspect][winner] = eval_res[aspect].get(winner, 0) + 1
-                            
-                for l in ["A", "B"]:
-                    m = item[f"generator_{l}"]
-                    if m not in lens:
-                        lens[m] = []
-                    lens[m].append(item["len_"+l]) 
-                        
-        eval_res.update({"total": cnt})
-        eval_res["avg_lens"] = {}
-        for m in lens:
-            eval_res["avg_lens"][m] = float(np.mean(lens[m]))
-            
-    elif mode.startswith("score"):
+    if mode.startswith("score"):
         cnt = 0
         lens_cand = []
         if "_multi" not in mode and "_safety" not in mode:
@@ -144,20 +99,6 @@ def report(results, mode, args):
         else:
             eval_res["avg_lens"] = float(np.mean(lens_cand))
     
-    elif mode.startswith("reward"):
-        cnt = 0
-        lens_cand = [] 
-        scores = []  
-        eval_res = {} 
-        for item in results: 
-            d = item
-            d["len_cand"] = len(d["output_cand"].split())
-            lens_cand.append(item["len_cand"]) 
-            score = item["result"]["score"]
-            scores.append(float(score))              
-            cnt += 1 
-        eval_res = {"total": cnt, "average_score": float(np.mean(scores)), "std": float(np.std(scores))} 
-        eval_res["avg_lens"] = float(np.mean(lens_cand))
     eval_res["output_file"] = args.output_file
     return eval_res
                 
@@ -253,53 +194,7 @@ def shorten(text, K=-1):
     if K > 0 and len(text.split(" ")) > K:
         text = " ".join(text.split(" ")[:K]) + "... (truncated)"
     return text
-
-def pairwise_eval(args):
-    with open(args.first_file, 'r') as f:
-        data_1 = json.load(f) 
-    with open(args.second_file, 'r') as f:
-        data_2 = json.load(f) 
-    
-    L = min(len(data_1), len(data_2))
-    if args.end_idx < 0:
-        args.end_idx = L
-    print(f"# examples in A: {len(data_1)}; # examples in B: {len(data_2)}; We take {args.end_idx-args.start_idx} for evaluation.")
-    data_1 = data_1[:L]
-    data_2 = data_2[:L]
-    
-    results = []
-    for itemA, itemB in zip(data_1, data_2):
-        assert itemA["instruction"] == itemB["instruction"]
-        instruction = itemB["instruction"]
-        if random.random() < 0.5:
-            itemB["output"], itemA["output"] = itemA["output"], itemB["output"]
-            itemB["generator"], itemA["generator"] = itemA["generator"], itemB["generator"]
-            
-        A, B = itemA["output"], itemB["output"] 
-        A, B = shorten(A, args.max_words_to_eval), shorten(B, args.max_words_to_eval)
-        if args.mode == "pairwise_multi":
-            prompt = Template(MULTI_PAIRWISE_TEMPLATE).substitute(
-                instruction = instruction, 
-                candidateA = A,
-                candidateB = B, 
-            )
-        else:
-            prompt = Template(PAIRWISE_TEMPLATE).substitute(
-                instruction = instruction, 
-                candidateA = A,
-                candidateB = B, 
-            )
-        d = {}
-        d["id"] = itemA.get("id", len(results))
-        d["input"] = instruction
-        d["output_A"], d["output_B"] = itemA["output"], itemB["output"]
-        d["generator_A"], d["generator_B"] = itemA["generator"], itemB["generator"]
-        d["eval_config"] = {"mode": args.mode, "gpt": args.model, "max_words": args.max_words_to_eval}
-        d["prompt"] = prompt
-        d["result"] = "N/A"
-        results.append(d)
-    return results
-    
+ 
     
 def score_eval(args):
     results = []
@@ -348,72 +243,7 @@ def score_eval(args):
         results.append(d)
     return results 
  
-
-def tag_eval(args):
-    results = []
-    with open(args.first_file, 'r') as f:
-        candidates = json.load(f)  
-    references = [None] * len(candidates) 
-    L = min(len(candidates), len(references))
-    if args.end_idx < 0:
-        args.end_idx = L
-    print(f"# examples in candidates: {len(candidates)}; # examples in references: {len(references)}; We take {args.end_idx-args.start_idx} for evaluation.")
-    candidates = candidates[:L]
-    references = references[:L]
-    
-    results = []
-    for itemA, itemB in zip(candidates, references):
-        instruction = itemA["instruction"] 
-        if args.mode == "tag":
-            A = itemA["output"]
-            A = shorten(A)
-            prompt = Template(TAG_DATA_TEMPLATE_V2).substitute(
-                instruction = instruction, 
-                # candidate = A
-            ) 
-        d = {}
-        d["id"] = itemA.get("id", len(results))
-        d["input"] = instruction
-        d["output_cand"] = itemA["output"]
-        d["generator_cand"] = itemA["generator"]  
-        d["eval_config"] = {"mode": args.mode, "gpt": args.model, "max_words": args.max_words_to_eval}
-        d["prompt"] = prompt
-        d["result"] = "N/A" 
-        results.append(d)
-    return results 
- 
-
-
-def rm_eval(results, args):
-    from just_eval.reward_model import LlamaRewardModel, LlamaTokenizer
-    import torch
-    results = results[args.start_idx:args.end_idx] # for debug
-    print("Loading Reward Model...")
-    tokenizer = LlamaTokenizer.from_pretrained("openbmb/UltraRM-13b")
-    model = LlamaRewardModel.from_pretrained("openbmb/UltraRM-13b", device_map="auto", torch_dtype=torch.bfloat16)
-    if torch.cuda.is_available():
-        print("CUDA is available!")
-        model = model.to("cuda:0")
-    print("Loading Reward Model... Done! ")
-    for ind, item in tqdm(enumerate(results), total=len(results), desc=f"Evaluating: {args.output_file} "):
-        if item["result"] != "N/A":
-            results[ind]["parsed_result"] = json.loads(results[ind]["result"])
-            print(f"Skipping {ind} for {args.output_file}")
-            continue
-        # print(f"\nNot Skipping {ind}") 
-     
-        item["prompt"] = f"""Human: {item['input']}\n Assistant: {item['output_cand']}"""
-        inputs = tokenizer(item["prompt"], return_tensors="pt", max_length=1024).to(model.device)
-        reward = model(**inputs).item()
-        results[ind]["result"] = {"score": reward} 
-        
-        # print("Done!") 
-        if ind % args.save_interval == 0 or ind == len(results)-1:
-            with open(args.output_file, "w") as f:
-                json.dump(results, f, indent=2) 
-    with open(args.output_file, "w") as f:
-        json.dump(results, f, indent=2)
-    return results 
+  
 
 def main():
     random.seed(42)
@@ -431,18 +261,11 @@ def main():
             print("Evaluation results saved to:", f.name)
         exit()
     
-    if args.mode.startswith("pairwise"):
-        results = pairwise_eval(args)
-        results = gpt_eval(results, args) 
-    elif args.mode.startswith("score"):
+    if args.mode.startswith("score"):
         results = score_eval(args)
         results = gpt_eval(results, args) 
-    elif args.mode.startswith("reward"):
-        results = score_eval(args)
-        results = rm_eval(results, args) 
-    elif args.mode == "tag":
-        results = tag_eval(args)
-        results = gpt_eval(results, args)
+    else:
+        print("Not implemented yet!")
 
 if __name__ == "__main__": 
     main()
