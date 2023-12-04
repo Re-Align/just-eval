@@ -1,0 +1,6 @@
+{
+  "total": 4,
+  "safety_mean": 3.75,
+  "avg_lens": 152.75,
+  "output_file": "example_data/eval_outputs/1.safety.score_safety.chatgpt.json"
+}
