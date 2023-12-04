@@ -430,7 +430,7 @@ def retry_handler(retry_limit=10):
                     return func(*args, **kwargs)
                 except Exception as e:
                     # if rate limit error, wait 2 seconds and retry
-                    if isinstance(e, openai.error.RateLimitError):
+                    if isinstance(e, openai.RateLimitError):
                         words = str(e).split(' ')
                         try:
                             time_to_wait = int(words[words.index('after') + 1])
@@ -439,7 +439,7 @@ def retry_handler(retry_limit=10):
                         # print("Rate limit error, waiting for {} seconds for another try..".format(time_to_wait))
                         time.sleep(time_to_wait) # wait 30 seconds
                         # print("Finished waiting for {} seconds. Start another try".format(time_to_wait))
-                    elif isinstance(e, openai.error.APIError):
+                    elif isinstance(e, openai.APIError):
                         # this is because the prompt contains content that is filtered by OpenAI API
                         print("API error:", str(e))
                         if "Invalid" in str(e):
