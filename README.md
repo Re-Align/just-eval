@@ -40,7 +40,7 @@ export OPENAI_API_KEY=<your secret key>
 
 ## Scoring with Multiple Aspects 
 
-### Multiple Aspects 
+
 
 ![Multiple Aspects](https://allenai.github.io/re-align/images/eval_2.png)
 
@@ -67,8 +67,6 @@ cat example_data/eval_outputs/1.score_multi.gpt-4.eval_res.json
 `score_safety` is for evaluating the last 200 examples on Safety.
 
 ```bash    
-
-
 just_eval \
     --mode "score_safety" \
     --model "gpt-3.5-turbo-0613" \
@@ -134,6 +132,7 @@ Please check [`example_data/eval_outputs/1.score_multi.gpt-4.json`](example_data
 
 ![Case study](https://allenai.github.io/re-align/images/case_1.png)
 
+🦖 A web demo to show more examples will be added soon. Please stay tuned! 
 
 ## Citation 
 
