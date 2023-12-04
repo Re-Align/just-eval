@@ -22,7 +22,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     install_requires=['argparse',
                       'tqdm',
-                      'openai',
+                      'openai==0.28',
                       'numpy'
                     ],
     entry_points = {
