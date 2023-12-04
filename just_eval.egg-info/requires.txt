@@ -1,0 +1,4 @@
+argparse
+tqdm
+openai
+numpy

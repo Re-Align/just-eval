@@ -1,0 +1,11 @@
+{
+  "total": 6,
+  "relevance_mean": 9.5,
+  "coherence_mean": 9.666666666666666,
+  "factuality_mean": 8.666666666666666,
+  "depth_mean": 8.833333333333334,
+  "engagement_mean": 8.666666666666666,
+  "safety_mean": 10.0,
+  "avg_lens": 332.6666666666667,
+  "output_file": "example_data/eval_outputs/score_multi.gpt4.json"
+}

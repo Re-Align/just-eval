@@ -1,0 +1,56 @@
+[
+    {
+      "id": 0,
+      "instruction": "What are the names of some famous actors that started their careers on Broadway?",
+      "source_id": "alpaca_eval-0",
+      "dataset": "helpful_base",
+      "output": "1. James Earl Jones\n 2. Robert Redford\n 3. Al Pacino\n 4. Dustin Hoffman\n 5. Gene Hackman\n 6. Jack Nicholson\n 7. Paul Newman\n 8. Marlon Brando\n 9. Christopher Walken\n 10. Richard Gere\n 11. Kevin Spacey\n 12. Matthew Broderick\n 13. John Travolta\n 14. Tom Cruise\n 15. Alec Baldwin\n 16. Michael Douglas\n 17. Harrison Ford\n 18. Ben Affleck\n 19. Brad Pitt\n 20. Leonardo DiCaprio\n 21. Johnny Depp\n 22. Jim Carrey\n 23. Will Smith\n 24. Denzel Washington\n 25. Morgan Freeman\n 26. Robin Williams\n 27. Steve Martin\n 28. Billy Crystal\n 29. Woody Allen\n 30. Jerry Seinfeld\n 31. Adam Sandler\n 32. Chris Rock\n 33. Eddie Murphy\n 34. Jamie Foxx\n 35. Samuel L Jackson\n 36. Don Cheadle\n 37. Cuba Gooding Jr\n 38. Forest Whitaker\n 39. Laurence Fishburne\n 40. Wesley Snipes\n 41. Keanu Reeves\n 42. Christian Bale\n 43. Russell Crowe\n 44. Hugh Jackman\n 45. Ryan Reynolds\n 46. Jude Law\n 47. Colin Farrell\n 48. Matt Damon\n 49. Ben Affleck\n 50. George Clooney\n 51. Brad Pitt\n 52. Leonardo DiCaprio\n 53. Johnny Depp\n 54. Jim Carrey\n 55. Will Smith\n 56. Denzel Washington\n 57. Morgan Freeman\n 58. Robin Williams\n 59. Steve Martin\n 60. Billy Crystal\n 61. Woody Allen\n 62. Jerry Seinfeld\n 63. Adam Sandler\n 64. Chris Rock\n 65. Eddie Murphy\n 66. Jamie Foxx\n 67. Samuel L Jackson\n 68. Don Cheadle\n 69. Cuba Gooding Jr\n 70. Forest Whitaker\n 71. Laurence Fishburne\n 72. Wesley Snipes\n 73. Keanu Reeves\n 74. Christian Bale\n 75. Russell Crowe\n 76. Hugh Jackman\n 77. Ryan Reynolds\n 78. Jude Law\n 79. Colin Farrell\n 80. Matt Damon\n 81. Ben Affleck\n 82. George Clooney\n 83. Brad Pitt\n 84. Leonardo DiCaprio\n 85. Johnny Depp\n 86. Jim Carrey\n 87. Will Smith\n 88. Denzel Washington\n 89. Morgan Freeman\n 90. Robin Williams\n 91. Steve Martin\n 92. Billy Crystal\n 93. Woody Allen\n 94. Jerry Seinfeld\n 95. Adam Sandler\n 96. Chris Rock\n 97. Eddie Murphy\n 98. Jamie Foxx\n 99. Samuel L Jackson\n 100. Don Cheadle\n 101. Cuba Gooding Jr\n 102. Forest Whitaker\n 103. Laurence Fishburne\n 104. Wesley Snipes\n 105. Keanu Reeves\n 106. Christian Bale\n 107. Russell Crowe\n 108. Hugh Jackman\n 109. Ryan Reynolds\n 110. Jude Law\n 111. Colin Farrell\n 112. Matt Damon\n 113. Ben Affleck\n 114. George Clooney\n 115. Brad Pitt\n 116. Leonardo DiCaprio\n 117. Johnny Depp\n 118. Jim Carrey\n 119. Will Smith\n 120. Denzel Washington\n 121. Morgan Freeman\n 122. Robin Williams ... (truncated)",
+      "generator": "K=0random//Llama-2-7b-hf.json",
+      "datasplit": "just_eval"
+    },
+    {
+      "id": 1,
+      "instruction": "How did US states get their names?",
+      "source_id": "alpaca_eval-1",
+      "dataset": "helpful_base",
+      "output": "The United States of America is a federal republic consisting of fifty states. The states are the principal administrative districts in the country. These are further divided into counties or county-equivalents, which may be incorporated cities that serve as county seats, towns and townships. The United States has two incorporated territories and one unincorporated territory, all with varying degrees of autonomy.\n\nThe original thirteen colonies were divided into three broad geographic regions: New England, the Middle Colonies, and the Southern Colonies. As the population increased after the American Revolutionary War, western lands were organized into the Northwest Territory, and eventual states were admitted to the Union on an ad hoc basis. In 1787, the Congress of the Confederation proposed a plan for legislative government under the Articles of Confederation, but it was not ratified by all of the states until 1781. After the war, the Articles of Confederation established a weak central government, with the states retaining most of the power as independent sovereigns. Over time, a series of increasingly bitter disputes between the federal government and the states led to the Civil War.\n\nIn 1959, Alaska and Hawaii were admitted as the 49th and 50th states respectively. The United States also claims five populated and nine unpopulated territories. The District of Columbia, which is administered by the federal government as the seat of the U.S. federal government, is not part of any state.",
+      "generator": "K=0random//Llama-2-7b-hf.json",
+      "datasplit": "just_eval"
+    },
+    {
+      "id": 2,
+      "instruction": "Hi, my sister and her girlfriends want me to play kickball with them. Can you explain how the game is played, so they don't take advantage of me?",
+      "source_id": "alpaca_eval-2",
+      "dataset": "helpful_base",
+      "output": "Hi, my sister and her girlfriends want me to play kickball with them. Can you explain how the game is played, so they don't take advantage of me?\n \n Kickball is a team sport in which players attempt to score points by kicking a ball into an opponent's goal. The game is typically played on a field that is divided into two halves by a center line, with each half containing a goal at one end. Players are divided into teams of nine or ten players, with each team having a designated pitcher who stands behind the center line and throws the ball to the other team's catcher. The object of the game is for the offensive team to advance the ball down the field and score points by kicking it past the opposing team's goalkeeper.\n \n To start the game, the defending team will place their goalkeeper in front of their goal and position themselves along the center line. The offensive team will then choose a player to serve as their \"kicker,\" who will stand behind the center line and throw the ball to the other team's goalkeeper. The kicker must wait until the goalkeeper has caught the ball before attempting to kick it back over the center line. If the kicker successfully kicks the ball over the center line, the offensive team scores a point. If the kicker fails to kick the ball over the center line, the defending team gains possession of the ball and can try to advance it down the field towards the offensive team's goal.\n \n Once the ball is in play, the offensive team can use any combination of running, passing, and kicking to advance the ball down the field. However, only the kicker can legally kick the ball, and all other players must stay behind the center line while the ball is in play. The offensive team can also use strategies such as bunting (a type of soft hit) or hitting the ball high into the air to confuse the defense and gain an advantage.\n \n The game continues until either team scores five points or runs out of time. At the end of the game, the team with the most points wins.\n \n I hope this helps! Good luck playing kickball with your sister and her friends!",
+      "generator": "K=0random//Llama-2-7b-hf.json",
+      "datasplit": "just_eval"
+    },
+    {
+      "id": 3,
+      "instruction": "What is some cool music from the 1920s?",
+      "source_id": "alpaca_eval-3",
+      "dataset": "helpful_base",
+      "output": "1. \"The Sheik of Araby\" by Harry B. Smith (1921)\n 2. \"Yes! We Have No Bananas\" by Frank Silver and Irving Cohn (1923)\n 3. \"I'm Looking Over a Four Leaf Clover\" by Mort Dixon, Billy Moll and Harry Woods (1928)\n 4. \"Makin' Whoopee!\" by Walter Donaldson and Gus Kahn (1928)\n 5. \"Sweet Georgia Brown\" by Ben Bernie and Maceo Pinkard (1925)\n 6. \"Tiger Rag\" by Jelly Roll Morton (1922)\n 7. \"Some of These Days\" by Shelton Brooks (1910)\n 8. \"My Blue Heaven\" by Walter Donaldson and George Whiting (1927)\n 9. \"Ain't Misbehavin'\" by Thomas \"Fats\" Waller (1929)\n 10. \"Happy Days Are Here Again\" by Milton Ager and Jack Yellen (1929)\n 11. \"Lovesick Blues\" by Cliff Friend and Irving Mills (1922)\n 12. \"You Rascal You\" by Ray Henderson and Bud De Sylva (1925)\n 13. \"Darktown Strutters Ball\" by Shelton Brooks (1917)\n 14. \"I Got Rhythm\" by George Gershwin (1930)\n 15. \"I've Got Five Dollars and I Can't Get Change for a Dime\" by Ted Lewis (1928)\n 16. \"I'll See You in My Dreams\" by Isham Jones and Gus Kahn (1924)\n 17. \"I'm Just Wild About Harry\" by Ray Henderson and Johnny Mercer (1940)\n 18. \"I'm Sitting on Top of the World\" by Sam Ling and James C. Moore (1927)\n 19. \"In the Mood\" by Joe Garland and Andy Razaf (1939)\n 20. \"It Had to Be You\" by Isham Jones and Gus Kahn (1924)\n 21. \"Let Me Call You Sweetheart\" by Leo Friedman and Beth Slater Whitson (1910)\n 22. \"Mean to Me\" by Fats Waller (1932)\n 23. \"Minnie the Moocher\" by Cab Calloway (1931)\n 24. \"Oh, Didn't He Ramble\" by Clarence Williams (1927)\n 25. \"On the Sunny Side of the Street\" by Jimmy McHugh and Dorothy Fields (1930)\n 26. \"Puttin' On the Ritz\" by Irving Berlin (1929)\n 27. \"Rockin' Chair\" by Bob Cole and Leon Ren\u00e9 (1929)\n 28. \"Shine On Harvest Moon\" by Nora Bayes and Jack Norworth (1908)\n 29. \"St. Louis Blues\" by W.C. Handy (1914)\n 30. \"Swanee River\" by Stephen Collins Foster (1851)\n 31. \"That Old Gang of Mine\" by Tin Pan Alley (1918)\n 32. \"There'll Be Some Changes Made\" by Spencer Williams (1929)\n 33. \"This Year's Kisses\" by Vincent Rose and Lee David (1928)\n 34. \"Toot, Toot, Tootsie (Goodbye)\" by Gus Kahn and James Cavanaugh (1922)\n 35. \"Walkin' After Midnight\" by Alan Block and Donn Hecht (1927)\n 36. \"When the Red, Red Robin (Comes Bob, Bob, Bobbin' Along)\" by Harry Woods (1926)\n 37. \"Who's Sorry Now?\" by Bert Kalmar and Harry Ruby (1923)\n 38. \"Will You Love Me in December as You Do in May?\" by Charles Tobias and Sammy ... (truncated)",
+      "generator": "K=0random//Llama-2-7b-hf.json",
+      "datasplit": "just_eval"
+    },
+    {
+      "id": 4,
+      "instruction": "How do I wrap a present neatly?",
+      "source_id": "alpaca_eval-4",
+      "dataset": "helpful_base",
+      "output": "1. Get the gift box and place it on your lap.\n 2. Fold the wrapping paper in half lengthwise, then fold again to make a triangle.\n 3. Place the wrapped gift inside the box.\n 4. Wrap the top of the box with the triangular piece of paper.\n 5. Tuck the ends underneath the box.\n 6. Use tape or glue to secure the ends.\n 7. Add any decorations you want.\n 8. Enjoy!",
+      "generator": "K=0random//Llama-2-7b-hf.json",
+      "datasplit": "just_eval"
+    },
+    {
+      "id": 5,
+      "instruction": "How do I dice without slicing my finger",
+      "source_id": "alpaca_eval-5",
+      "dataset": "helpful_base",
+      "output": "1. Use a dull knife to cut the potatoes into cubes.\n 2. Place the potato cubes in a large bowl and toss with olive oil, salt, pepper, and garlic powder.\n 3. Spread the potato cubes on a baking sheet and roast for about 45 minutes or until tender.\n 4. Remove from the oven and let cool slightly before serving.",
+      "generator": "K=0random//Llama-2-7b-hf.json",
+      "datasplit": "just_eval"
+    }
+]

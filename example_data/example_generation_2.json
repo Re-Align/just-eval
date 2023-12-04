@@ -1,0 +1,56 @@
+[
+  {
+    "id": 0,
+    "instruction": "What are the names of some famous actors that started their careers on Broadway?",
+    "source_id": "alpaca_eval-0",
+    "dataset": "helpful_base",
+    "output": "1. Hugh Jackman\n2. Nathan Lane\n3. Bernadette Peters\n4. Patti LuPone\n5. Audra McDonald\n6. Kristin Chenoweth\n7. Idina Menzel\n8. Sutton Foster\n9. Kelli O'Hara\n10. Lin-Manuel Miranda\n11. Mandy Patinkin\n12. Bebe Neuwirth\n13. Laura Benanti\n14. Jessie Mueller\n15. Brian Stokes Mitchell",
+    "generator": "gpt-4-0314",
+    "datasplit": "just_eval"
+  },
+  {
+    "id": 1,
+    "instruction": "How did US states get their names?",
+    "source_id": "alpaca_eval-1",
+    "dataset": "helpful_base",
+    "output": "U.S. states got their names from various sources, reflecting the diverse history and cultural influences in the country. Here are some common origins of state names:\n\n1. Native American tribes and languages: Many states have names derived from the indigenous peoples who lived in the area before European colonization. Examples include Alabama (from the Alibamu tribe), Illinois (from the Illiniwek tribe), and Massachusetts (from the Massachusett tribe).\n\n2. European explorers and settlers: Some state names come from the explorers who first mapped or settled the area, or from the European countries that claimed the territory. Examples include Louisiana (named after French King Louis XIV), Georgia (named after British King George II), and New York (named after the Duke of York, later King James II of England).\n\n3. Geographic features: Some states are named after prominent natural features in the area. Examples include Colorado (from the Spanish word for \"colored\" or \"red,\" referring to the Colorado River's reddish silt), Mississippi (from the Ojibwe word \"misi-ziibi,\" meaning \"great river\"), and Montana (from the Spanish word \"monta\u00f1a,\" meaning \"mountain\").\n\n4. Latin or Greek origins: A few state names have roots in Latin or Greek words, often reflecting the ideals of the people who founded the state. Examples include California (possibly from the Latin \"calida fornax,\" meaning \"hot furnace,\" or from a fictional island in a Spanish novel), and Pennsylvania (from the Latin \"sylva,\" meaning \"wood\" or \"forest,\" and the surname of the state's founder, William Penn).\n\n5. Other historical or cultural influences: Some state names have unique origins that don't fit neatly into the categories above. Examples include Hawaii (from the Polynesian word \"hawaiki,\" meaning \"place of the gods\" or \"homeland\"), and Texas (from the Caddo word \"taysha,\" meaning \"friends\" or \"allies\").\n\nOverall, the names of U.S. states reflect the rich tapestry of cultures, languages, and historical events that have shaped the country.",
+    "generator": "gpt-4-0314",
+    "datasplit": "just_eval"
+  },
+  {
+    "id": 2,
+    "instruction": "Hi, my sister and her girlfriends want me to play kickball with them. Can you explain how the game is played, so they don't take advantage of me?",
+    "source_id": "alpaca_eval-2",
+    "dataset": "helpful_base",
+    "output": "Kickball is a fun and simple game that is similar to baseball or softball but played with a large rubber ball, usually 10 to 16 inches in diameter. Here's a basic rundown of the rules and gameplay:\n\n1. Teams: Kickball is typically played with two teams, each consisting of around 8-10 players. You can adjust the number of players depending on the size of your group.\n\n2. Field setup: The playing field is set up with four bases (first, second, third, and home) arranged in a diamond shape, similar to a baseball field. The pitching mound is located in the center of the diamond.\n\n3. Objective: The objective of the game is to score more runs than the opposing team. A run is scored when a player kicks the ball, runs around the bases, and successfully reaches home plate without being tagged out.\n\n4. Game structure: Kickball is usually played in innings, with each team getting a chance to kick (offense) and field (defense) in each inning. The number of innings can be predetermined or based on a time limit.\n\n5. Kicking: The pitcher rolls the ball towards the kicker, who must kick the ball with their foot. The kicker must kick the ball within the designated kicking area, usually between home plate and the pitcher's mound.\n\n6. Running the bases: After kicking the ball, the kicker runs to first base and can continue running to subsequent bases if the ball is still in play. Runners must touch each base in order and cannot skip any bases.\n\n7. Outs: The fielding team can get the kicking team's players out in several ways:\n   a. Catching a kicked ball in the air before it touches the ground.\n   b. Throwing the ball at a runner and hitting them while they are not on a base (this is called a \"peg out\").\n   c. Tagging a base with the ball before the runner reaches it (called a \"force out\").\n\n8. Strikes and fouls: If a kicker misses the ball or kicks it outside the designated kicking area, it is considered a strike or a foul. Three strikes or fouls result in an out.\n\n9. Ending the game: The game ends after a predetermined number of innings or when a time limit is reached. The team with the most runs at the end of the game is the winner.\n\nRemember to have fun and enjoy the game! Kickball is a great way to socialize and get some exercise with friends and family.",
+    "generator": "gpt-4-0314",
+    "datasplit": "just_eval"
+  },
+  {
+    "id": 3,
+    "instruction": "What is some cool music from the 1920s?",
+    "source_id": "alpaca_eval-3",
+    "dataset": "helpful_base",
+    "output": "1. \"Rhapsody in Blue\" by George Gershwin (1924) - This iconic jazz-influenced orchestral piece is one of the most famous compositions of the era.\n2. \"Ain't Misbehavin'\" by Fats Waller (1929) - A popular jazz tune that became a signature song for Waller.\n3. \"Sweet Georgia Brown\" by Ben Bernie and Maceo Pinkard (1925) - This catchy tune became a jazz standard and is often associated with the Harlem Globetrotters basketball team.\n4. \"St. Louis Blues\" by Bessie Smith (1925) - A classic blues song that showcases Smith's powerful voice and emotive delivery.\n5. \"My Blue Heaven\" by Gene Austin (1927) - A popular song of the era that has been covered by numerous artists over the years.\n6. \"Mack the Knife\" by Bertolt Brecht and Kurt Weill (1928) - Originally from the German musical \"The Threepenny Opera,\" this song became a jazz standard and has been recorded by many artists.\n7. \"Yes Sir, That's My Baby\" by Gene Austin (1925) - A popular and upbeat song that was a hit for Austin.\n8. \"Ol' Man River\" by Paul Robeson (1928) - A powerful song from the musical \"Show Boat\" that showcases Robeson's deep and resonant voice.\n9. \"It Don't Mean a Thing (If It Ain't Got That Swing)\" by Duke Ellington (1923) - A jazz standard that helped popularize the concept of \"swing\" in music.\n10. \"Charleston\" by James P. Johnson (1923) - A lively dance tune that became synonymous with the Roaring Twenties and the dance craze of the same name.",
+    "generator": "gpt-4-0314",
+    "datasplit": "just_eval"
+  },
+  {
+    "id": 4,
+    "instruction": "How do I wrap a present neatly?",
+    "source_id": "alpaca_eval-4",
+    "dataset": "helpful_base",
+    "output": "To wrap a present neatly, follow these steps:\n\n1. Gather your materials: You'll need wrapping paper, scissors, clear tape, and a gift tag or ribbon (optional).\n\n2. Measure the wrapping paper: Place the present on the wrapping paper and make sure there's enough paper to cover all sides of the gift. Cut the paper to size, leaving a little extra on each side for folding.\n\n3. Position the present: Place the present upside down in the center of the wrapping paper. This ensures that the seams will be on the bottom of the gift, making it look neater.\n\n4. Fold and tape the long sides: Fold one long side of the wrapping paper over the gift, pulling it tight and smoothing out any wrinkles. Secure it with a piece of tape. Then, fold the other long side over the gift, overlapping the first side slightly. Trim any excess paper if needed, and secure it with another piece of tape.\n\n5. Fold the short sides: Stand the gift up on one of its short sides. Push the top edge of the wrapping paper down onto the gift, creating a crease along the top edge. Fold the two side edges inwards, creating a triangle shape on each side. You may need to adjust the folds to make them even and neat.\n\n6. Fold the bottom flap up: Fold the bottom triangle-shaped flap up and over the gift, pulling it tight and smoothing out any wrinkles. Secure it with a piece of tape.\n\n7. Repeat on the other short side: Turn the gift around and repeat steps 5 and 6 on the other short side.\n\n8. Add finishing touches: If desired, add a gift tag or ribbon to complete the look. To tie a ribbon, wrap it around the gift lengthwise and cross it at the bottom, then bring it back up to the top and tie a bow.\n\n9. Double-check your work: Make sure all seams are secure and the wrapping paper is smooth and wrinkle-free. Your neatly wrapped present is now ready to be given!",
+    "generator": "gpt-4-0314",
+    "datasplit": "just_eval"
+  },
+  {
+    "id": 5,
+    "instruction": "How do I dice without slicing my finger",
+    "source_id": "alpaca_eval-5",
+    "dataset": "helpful_base",
+    "output": "To dice without slicing your finger, follow these steps:\n\n1. Choose a sharp knife: A sharp knife is safer than a dull one, as it requires less force and is less likely to slip. Use a chef's knife or a utility knife for dicing.\n\n2. Proper grip: Hold the knife handle with your dominant hand, with your thumb and index finger gripping the blade near the handle for better control.\n\n3. Create a stable cutting surface: Make sure your cutting board is stable and won't slip. You can place a damp cloth or paper towel underneath the cutting board to prevent it from moving.\n\n4. Prepare the food: If you're dicing a round vegetable or fruit, cut a small slice off one side to create a flat surface. This will prevent the food from rolling while you dice it.\n\n5. Use the claw grip: Hold the food with your non-dominant hand, curling your fingers under and tucking your fingertips away from the blade. Your knuckles should be in contact with the side of the knife, acting as a guide and protecting your fingertips.\n\n6. Make vertical cuts: With your knife parallel to your knuckles, make vertical cuts in the food, keeping your fingertips tucked away. Do not fully separate the pieces, as this will make it easier to dice.\n\n7. Make horizontal cuts: Hold the food together and make horizontal cuts, starting from one end and working your way to the other.\n\n8. Dice: Finally, make perpendicular cuts to the previous cuts to create small, even dices.\n\n9. Take your time: Don't rush while dicing, as this increases the risk of cutting yourself. Practice good knife skills and maintain focus on the task at hand.\n\nRemember to always be cautious and attentive when using a knife, and with practice, your dicing skills will improve, reducing the risk of injury.",
+    "generator": "gpt-4-0314",
+    "datasplit": "just_eval"
+  }
+]

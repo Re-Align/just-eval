@@ -1,0 +1,10 @@
+{
+  "Llama-2-7b-chat-hf": 1,
+  "gpt-4-0314": 5,
+  "total": 6,
+  "avg_lens": {
+    "Llama-2-7b-chat-hf": 332.6666666666667,
+    "gpt-4-0314": 279.6666666666667
+  },
+  "output_file": "example_data/eval_outputs/pairwise.gpt-3.5-turbo.json"
+}

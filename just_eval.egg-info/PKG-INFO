@@ -1,0 +1,144 @@
+Metadata-Version: 2.1
+Name: just-eval
+Version: 1.0.0
+Summary: A simple and easy tool for evaluate LLMs using GPT APIs.
+Home-page: https://github.com/allenai/just_eval
+Author: Bill Yuchen Lin
+Author-email: yuchenl@allenai.org
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# just_eval
+
+## Installation 
+
+```bash 
+git clone https://github.com/allenai/just_eval.git
+cd just_eval
+pip install .
+```
+
+## Setup OpenAI API Key
+
+```bash 
+export OPENAI_API_KEY=<your secret key>
+```
+
+
+## Scoring with Multiple Aspects 
+
+```bash  
+just_eval \
+    --mode "score_multi" \
+    --model "gpt-4-0314" \
+    --first_file "example_data/example_generation_0.json" \
+    --output_file "example_data/eval_outputs/0.score_multi.gpt-4.json"
+
+just_eval \
+    --mode "score_multi" \
+    --model "gpt-3.5-turbo-0613" \
+    --first_file "example_data/example_generation_0.json" \
+    --output_file "example_data/eval_outputs/0.score_multi.chatgpt.json"
+
+just_eval --report_only --mode "score_multi" \
+          --output_file "example_data/eval_outputs/score_multi.gpt4.json" 
+             
+```
+
+
+## Scoring with Safety
+
+```bash  
+# just_eval \
+#     --mode "score_safety" \
+#     --model "gpt-4-0314" \
+#     --first_file "example_data/example_generation_0.json" \
+#     --output_file "example_data/eval_outputs/0.score_safety.gpt-4.json"
+
+just_eval \
+    --mode "score_safety" \
+    --model "gpt-3.5-turbo-0613" \
+    --first_file "example_data/example_generation_0.json" \
+    --output_file "example_data/eval_outputs/0.score_safety.chatgpt.json"
+
+just_eval \
+    --mode "score_safety" \
+    --model "gpt-3.5-turbo-0613" \
+    --first_file "example_data/example_generation_safety.json" \
+    --output_file "example_data/eval_outputs/safety.score_safety.chatgpt.json"
+
+    
+
+just_eval --report_only --mode "score_safety" \
+          --output_file "example_data/eval_outputs/score_safety.gpt4.json" 
+             
+```
+
+
+## Pairwise Comparisons with Multiple Aspects
+
+```bash  
+just_eval \
+    --mode "pairwise_multi" \
+    --model "gpt-3.5-turbo-0613" \
+    --first_file example_data/example_generation_1.json \
+    --second_file example_data/example_generation_2.json  \
+    --output_file example_data/eval_outputs/1-2.pairwise_multi.gpt-3.5-turbo.json 
+
+just_eval \
+    --mode "pairwise_multi" \
+    --model "gpt-4-0314" \
+    --first_file example_data/example_generation_1.json \
+    --second_file example_data/example_generation_2.json  \
+    --output_file example_data/eval_outputs/1-2.pairwise_multi.gpt-4.json 
+
+just_eval --report_only --mode "pairwise_multi" \
+          --output_file "example_data/eval_outputs/1-2.pairwise_multi.gpt-4.json"
+```
+
+
+
+## Reward Model as Evaluator 
+
+```bash   
+CUDA_VISIBLE_DEVICES=0 just_eval \
+    --mode "reward" \
+    --first_file "example_data/example_generation_0.json" \
+    --output_file "example_data/eval_outputs/0.reward.json"  
+
+CUDA_VISIBLE_DEVICES=1 just_eval \
+    --mode "reward" \
+    --first_file "example_data/example_generation_1.json" \
+    --output_file "example_data/eval_outputs/1.reward.json"  
+
+CUDA_VISIBLE_DEVICES=1 just_eval \
+    --mode "reward" \
+    --first_file "example_data/example_generation_2.json" \
+    --output_file "example_data/eval_outputs/2.reward.json"  
+```
+
+
+## Tagging Instances
+
+```bash
+wget https://huggingface.co/datasets/yuchenlin/just-eval-instruct/raw/main/responses/Llama-2-7b-chat-hf.json -O example_data/example_data.json
+# --model "gpt-3.5-turbo-0613"
+--model "gpt-4-0613"
+just_eval \
+    --mode "tag" \
+    --model "gpt-4-0314" \
+    --first_file "example_data/example_data.json" \
+    --start 0 --end 800 \
+    --output_file "example_data/eval_outputs/all.tag.gpt-4.json"
+
+just_eval \
+    --mode "tag" \
+    --model "gpt-4-0314" \
+    --first_file "example_data/example_data.json" \
+    --start 0 --end 800 \
+    --output_file "example_data/eval_outputs/all.tag.gpt-4.supp.json"
+```
