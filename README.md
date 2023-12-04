@@ -8,6 +8,11 @@ cd just_eval
 pip install .
 ```
 
+or 
+```bash 
+pip install git+https://github.com/re-align/just_eval.git
+```
+
 ## Setup OpenAI API Key
 
 ```bash 
