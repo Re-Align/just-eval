@@ -20,6 +20,23 @@ export OPENAI_API_KEY=<your secret key>
 ```
 
 
+## Example Input Format 
+Please check [`example_data/example_generation_1.json`](example_data/example_generation_1.json) file for an example. 
+```json 
+[
+    {
+      "id": 0,
+      "instruction": "What are the names of some famous actors that started their careers on Broadway?",
+      "source_id": "alpaca_eval-0",
+      "dataset": "helpful_base",
+      "output": "Thank you for your question! I'm happy to help. There are many famous actors ...",
+      "generator": "Llama-2-7b-chat-hf",
+      "datasplit": "just_eval"
+    },
+    ...
+]
+```
+
 ## Scoring with Multiple Aspects 
 
 ```bash  
