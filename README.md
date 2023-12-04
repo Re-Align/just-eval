@@ -20,23 +20,6 @@ export OPENAI_API_KEY=<your secret key>
 ```
 
 
-## Example Input Format 
-Please check [`example_data/example_generation_1.json`](example_data/example_generation_1.json) file for an example. 
-```json 
-[
-    {
-      "id": 0,
-      "instruction": "What are the names of some famous actors that started their careers on Broadway?",
-      "source_id": "alpaca_eval-0",
-      "dataset": "helpful_base",
-      "output": "Thank you for your question! I'm happy to help. There are many famous actors ...",
-      "generator": "Llama-2-7b-chat-hf",
-      "datasplit": "just_eval"
-    },
-    ...
-]
-```
-
 ## Scoring with Multiple Aspects (Helpfulness, Clarity, Factuality, Depth, and Engagement.)
 
 ```bash  
@@ -70,8 +53,26 @@ cat example_data/eval_outputs/1.safety.score_safety.chatgpt.eval_res.json
 ``` 
 
 
-## Example Output Format 
 
+## Example Input Format 
+Please check [`example_data/example_generation_1.json`](example_data/example_generation_1.json) file for an example. 
+```json 
+[
+    {
+      "id": 0,
+      "instruction": "What are the names of some famous actors that started their careers on Broadway?",
+      "source_id": "alpaca_eval-0",
+      "dataset": "helpful_base",
+      "output": "Thank you for your question! I'm happy to help. There are many famous actors ...",
+      "generator": "Llama-2-7b-chat-hf",
+      "datasplit": "just_eval"
+    },
+    ...
+]
+```
+
+## Example Output Format 
+Please check [`example_data/eval_outputs/1.score_multi.gpt-4.json`](example_data/eval_outputs/1.score_multi.gpt-4.json) file for an example.
 ```json 
 
 [
