@@ -3,7 +3,7 @@
 
 ## Suggested dataset
 
-[re-align/just-eval-instruct on Hugging Face](https://huggingface.co/datasets/re-align/just-eval-instruct)
+Check out our data on 🤗 Hugging Face: [**re-align/just-eval-instruct**](https://huggingface.co/datasets/re-align/just-eval-instruct)
 
 
 ## Leaderboard
