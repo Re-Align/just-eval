@@ -3,14 +3,14 @@
 ## Installation 
 
 ```bash 
-git clone https://github.com/re-align/just_eval.git
+git clone https://github.com/Re-Align/just-eval.git
 cd just_eval
 pip install .
 ```
 
 or 
 ```bash 
-pip install git+https://github.com/re-align/just_eval.git
+pip install git+https://github.com/Re-Align/just-eval.git
 ```
 
 ## Setup OpenAI API Key
