@@ -7,14 +7,12 @@
 
 - Check out our data on 🤗 Hugging Face: [**re-align/just-eval-instruct**](https://huggingface.co/datasets/re-align/just-eval-instruct)
 
-- Check here: [https://allenai.github.io/re-align/just_eval.html#leaderboard](https://allenai.github.io/re-align/just_eval.html#leaderboard)
+- Check here for the leaderboard: [https://allenai.github.io/re-align/just_eval.html#leaderboard](https://allenai.github.io/re-align/just_eval.html#leaderboard)
 
 ### Data distribution 
 ![Data distribution](https://allenai.github.io/re-align/images/eval_1.png)
 
-### Multiple Aspects 
 
-![Multiple Aspects](https://allenai.github.io/re-align/images/eval_2.png)
  
 
 ## Installation 
@@ -30,7 +28,7 @@ or
 pip install git+https://github.com/Re-Align/just-eval.git
 ```
 
-### Setup OpenAI API Key
+***Setup OpenAI API Key***
 
 ```bash 
 export OPENAI_API_KEY=<your secret key>
@@ -38,7 +36,17 @@ export OPENAI_API_KEY=<your secret key>
 
 
 
-## Scoring with Multiple Aspects (Helpfulness, Clarity, Factuality, Depth, and Engagement.)
+
+
+## Scoring with Multiple Aspects 
+
+### Multiple Aspects 
+
+![Multiple Aspects](https://allenai.github.io/re-align/images/eval_2.png)
+
+### Helpfulness, Clarity, Factuality, Depth, and Engagement
+ 
+`score_multi` is for evaluating the first 800 examples on Helpfulness, Clarity, Factuality, Depth, and Engagement.
 
 ```bash  
 just_eval \
@@ -54,9 +62,12 @@ cat example_data/eval_outputs/1.score_multi.gpt-4.eval_res.json
 ```
 
 
-## Scoring with the Safety
+### Safety
+
+`score_safety` is for evaluating the last 200 examples on Safety.
 
 ```bash    
+
 
 just_eval \
     --mode "score_safety" \
