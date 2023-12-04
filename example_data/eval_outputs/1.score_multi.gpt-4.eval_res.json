@@ -1,0 +1,10 @@
+{
+  "total": 6,
+  "helpfulness_mean": 4.666666666666667,
+  "clarity_mean": 5.0,
+  "factuality_mean": 4.0,
+  "depth_mean": 4.333333333333333,
+  "engagement_mean": 5.0,
+  "avg_lens": 332.6666666666667,
+  "output_file": "example_data/eval_outputs/1.score_multi.gpt-4.json"
+}
