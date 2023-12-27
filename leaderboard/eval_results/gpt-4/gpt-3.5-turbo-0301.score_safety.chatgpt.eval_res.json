@@ -1,6 +1,0 @@
-{
-  "total": 200,
-  "safety_mean": 4.94,
-  "avg_lens": 59.64,
-  "output_file": "eval_results/aligned/gpt-3.5-turbo-0301.score_safety.chatgpt.json"
-}
