@@ -1,3 +1,12 @@
 just_eval/__pycache__
 just_eval.egg-info
 leaderboard/scripts/show_tables_backup.py
+*.pyc
+just_eval/__pycache__/__init__.cpython-310.pyc
+just_eval/__pycache__/_version.cpython-310.pyc
+just_eval/__pycache__/evaluate.cpython-310.pyc
+just_eval/__pycache__/utils.cpython-310.pyc
+just_eval.egg-info/PKG-INFO
+just_eval.egg-info/requires.txt
+just_eval.egg-info/SOURCES.txt
+just_eval.egg-info/top_level.txt

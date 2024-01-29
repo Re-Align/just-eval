@@ -14,8 +14,8 @@ from .utils import (
     retry_handler, 
     openai_chat_request
 )
-from _MULTI_SCORE_TEMPLATE import MULTI_SCORE_TEMPLATE
-from _SAFETY_SCORE_TEMPLATE import SAFETY_SCORE_TEMPLATE
+from ._MULTI_SCORE_TEMPLATE import MULTI_SCORE_TEMPLATE
+from ._SAFETY_SCORE_TEMPLATE import SAFETY_SCORE_TEMPLATE
 import numpy as np 
  
  
@@ -23,13 +23,12 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--report_only', action='store_true')
     
-    parser.add_argument("--mode", type=str, default="pairwise", required=True)
-    parser.add_argument("--first_file", type=str, required=False)
-    parser.add_argument("--second_file", type=str, required=False)
-    parser.add_argument("--output_file", type=str, required=True)
+    parser.add_argument("--mode", type=str, default="score_multi", required=True)
+    parser.add_argument("--model_output_file", type=str, required=False)
+    parser.add_argument("--ref_output_file", type=str, required=False)  # not used for now
+    parser.add_argument("--eval_output_file", type=str, required=True) 
     parser.add_argument("--start_idx", type=int, default=0)
-    parser.add_argument("--end_idx", type=int, default=-1) 
-    parser.add_argument("--reference_file", type=str, required=False) 
+    parser.add_argument("--end_idx", type=int, default=-1)  
     parser.add_argument("--save_interval", type=int, default=3)
     
     # Prompt configs 
@@ -37,7 +36,7 @@ def get_args():
     
     # OpenAI Configs
     parser.add_argument("--api_key", type=str, default=None)
-    parser.add_argument("--model", type=str, default="gpt-4-1106-preview") # gpt-4-0125-preview?
+    parser.add_argument("--gpt_model", type=str, default="gpt-4-1106-preview") # gpt-4-0125-preview?
     parser.add_argument("--engine", type=str, default=None)
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--max_tokens", type=int, default=1024)
@@ -47,8 +46,8 @@ def get_args():
         openai.api_key = args.api_key 
     
     if args.report_only:
-        print("\nloading:", args.output_file)
-        assert os.path.exists(args.output_file) 
+        print("\nloading:", args.eval_output_file)
+        assert os.path.exists(args.eval_output_file) 
         
     return args
 
@@ -76,7 +75,7 @@ def report(results, mode, args):
                         if aspect not in scores:
                             scores[aspect] = []
                         if result["score"] == "N/A":
-                            result["score"] = 3.0 # when some aspects are not available, we use 3.0 as the default score
+                            result["score"] = 5.0 # when some aspects are not available, we use 5.0 as the default score TODO: consider using 3.0 which makes more sense?
                         scores[aspect].append(float(result["score"]))
                 
                 cnt += 1
@@ -90,14 +89,14 @@ def report(results, mode, args):
                 
         eval_res["avg_lens"] = float(np.mean(lens_cand))
     
-    eval_res["output_file"] = args.output_file
+    eval_res["output_file"] = args.eval_output_file
     return eval_res
                 
 def gpt_eval(results, args):
-    # try to load the existing results from args.output_file 
-    if os.path.exists(args.output_file):
+    # try to load the existing results from args.eval_output_file 
+    if os.path.exists(args.eval_output_file):
         cnt = 0 
-        with open(args.output_file, "r") as f:
+        with open(args.eval_output_file, "r") as f:
             existing_results = json.load(f) 
         for i in range(len(existing_results)):
             e = existing_results[i]
@@ -112,15 +111,15 @@ def gpt_eval(results, args):
                 if "parsed_result" in e: 
                     t["parsed_result"] = e["parsed_result"]
                 cnt += 1
-        print(f"loading {cnt} results from {args.output_file}")
+        print(f"loading {cnt} results from {args.eval_output_file}")
     openai_args = {
         "prompt": "TODO",
         "temperature": args.temperature,
         "max_tokens": args.max_tokens,
         "stop": []
     }
-    if args.model:
-        openai_args['model'] = args.model
+    if args.gpt_model:
+        openai_args['model'] = args.gpt_model
     if args.engine:
         openai_args['engine'] = args.engine
         
@@ -154,11 +153,11 @@ def gpt_eval(results, args):
         return result
     
     results = results[args.start_idx:args.end_idx] # for debug
-    for ind, item in tqdm(enumerate(results), total=len(results), desc=f"Evaluating: {args.output_file} "):
+    for ind, item in tqdm(enumerate(results), total=len(results), desc=f"Evaluating: {args.eval_output_file} "):
         if item["result"] != "N/A":
             if args.mode != "tag":
                 results[ind]["parsed_result"] = better_json_loads(results[ind]["result"])
-            print(f"Skipping {ind} for {args.output_file}")
+            print(f"Skipping {ind} for {args.eval_output_file}")
             continue
         # print(f"\nNot Skipping {ind}") 
     
@@ -175,9 +174,9 @@ def gpt_eval(results, args):
         
         # print("Done!") 
         if ind % args.save_interval == 0 or ind == len(results)-1:
-            with open(args.output_file, "w") as f:
+            with open(args.eval_output_file, "w") as f:
                 json.dump(results, f, indent=2) 
-    with open(args.output_file, "w") as f:
+    with open(args.eval_output_file, "w") as f:
         json.dump(results, f, indent=2)
     return results 
 
@@ -189,7 +188,7 @@ def shorten(text, K=-1):
     
 def score_eval(args):
     results = []
-    with open(args.first_file, 'r') as f:
+    with open(args.model_output_file, 'r') as f:
         candidates = json.load(f) 
     references = [None] * len(candidates)
         
@@ -224,7 +223,7 @@ def score_eval(args):
         d["input"] = instruction
         d["output_cand"] = itemA["output"]
         d["generator_cand"] = itemA["generator"]  
-        d["eval_config"] = {"mode": args.mode, "gpt": args.model, "max_words": args.max_words_to_eval}
+        d["eval_config"] = {"mode": args.mode, "gpt": args.gpt_model, "max_words": args.max_words_to_eval}
         d["prompt"] = prompt
         d["result"] = "N/A" 
         results.append(d)
@@ -237,13 +236,13 @@ def main():
     args = get_args()
     
     if args.report_only:
-        with open(args.output_file) as f:
+        with open(args.eval_output_file) as f:
             results = json.load(f)
         if args.end_idx > 0:
             results = results[:args.end_idx]
         eval_res = report(results, args.mode, args)
         print(json.dumps(eval_res, indent=2))
-        with open(args.output_file.replace(".json",".eval_res.json"), "w") as f:
+        with open(args.eval_output_file.replace(".json",".eval_res.json"), "w") as f:
             json.dump(eval_res, f, indent=2)
             print("Evaluation results saved to:", f.name)
         exit()

@@ -1,6 +1,8 @@
 LICENSE
 README.md
 setup.py
+just_eval/_MULTI_SCORE_TEMPLATE.py
+just_eval/_SAFETY_SCORE_TEMPLATE.py
 just_eval/__init__.py
 just_eval/_version.py
 just_eval/evaluate.py

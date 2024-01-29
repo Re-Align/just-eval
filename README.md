@@ -41,6 +41,13 @@ export OPENAI_API_KEY=<your secret key>
 ## Scoring with Multiple Aspects 
 
 
+### One-click 
+
+```bash
+bash leaderboard/scripts/run_eval.sh gpt-3.5-turbo-0301
+```
+
+
 
 ![Multiple Aspects](https://allenai.github.io/re-align/images/eval_2.png)
 

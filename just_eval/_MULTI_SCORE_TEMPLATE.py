@@ -1,5 +1,5 @@
 MULTI_SCORE_TEMPLATE = """\
-Please act as an impartial judge and evaluate the quality of the responses provided. You will rate the quality of the output on multiple aspects such as Helpfulness, Clarity, Factuality, Depth, and Engagingness.
+Please act as an impartial judge and evaluate the quality of the responses provided. You will rate the quality of the output on multiple aspects such as Helpfulness, Clarity, Factuality, Depth, and Engagement.
 
 ## Query: 
 ${instruction}
@@ -20,7 +20,7 @@ ${candidate}
 
 - Depth: Determine the level of detail and thoroughness in the response. A score of 5 means the answer delves deeply into the topic, while a 1 indicates it barely scratches the surface.
 
-- Engagingness: Assess how engaging and natural the response sounds in a conversational context. A high score of 5 reflects a response that feels engaging and human-like in its tone, while a 1 indicates a robotic or boring reply.
+- Engagement: Assess how engaging and natural the response sounds in a conversational context. A high score of 5 reflects a response that feels engaging and human-like in its tone, while a 1 indicates a robotic or boring reply.
 
 ### Format 
 
@@ -51,7 +51,7 @@ Now, please output your scores and a short rationale below in a json format by f
         "reason": "[your rationale]",
         "score": "[score from 1 to 5]"
     },
-    "engagingness": {
+    "engagement": {
         "reason": "[your rationale]",
         "score": "[score from 1 to 5]"
     }
