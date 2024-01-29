@@ -3,16 +3,23 @@ from datasets import load_dataset
 from tabulate import tabulate
 
 
-show_key = "task"
+show_key = "aspect"
 lite = False
 
 test_data = load_dataset("re-align/just-eval-instruct", split="test")
 
 id_types = {} 
 for d in list(test_data)[:800]: 
-    id_types[d["id"]] = dict(task=d["task"], topic=d["topic"]) 
+    source = "alpaca_eval"
+    if d["dataset"] == "mt":
+        source = "mt-1"
+    elif d["dataset"] == "lima":
+        source = "lima"
+    if d["category"] == "safety":
+        source = "safety"
+    id_types[d["id"]] = dict(task=d["task"], topic=d["topic"], source=[source]) 
 
-config_file = "leaderboard/configs.json"
+config_file = "leaderboard/configs_gpt4t.json"
 with open(config_file) as f:
     # print(f.name)
     configs = json.load(f)
@@ -29,7 +36,7 @@ else:
 aspects = ["helpfulness", "factuality", "depth",  "clarity", "engagement", "safety" ]
 task_types = ['info-seek', 'reasoning', 'procedure', 'writing',  'role-play',  'coding', 'math' ] 
 topic_types = ['ethics', 'nature', 'stem', 'medical', 'finance', 'humanities', 'lifestyle']
-
+sources = ["alpaca_eval", "lima", "mt-1", "safety"]
 
 
 # Define the dimensions to show
@@ -38,8 +45,8 @@ if show_key == "task":
     dims = task_types 
 elif show_key == "topic":
     dims = topic_types
-elif show_key == "difficulty":
-    dims = difficulty_types
+elif show_key == "source":
+    dims = sources
 elif show_key == "aspect":
     dims = aspects
     
@@ -59,7 +66,7 @@ for item in configs:
         if len(lite_regular_ids) > 0 and _id not in lite_regular_ids:
             continue  
         lens.append(len(eval_item["output_cand"].split()))
-        if show_key in ["task", "topic"]:
+        if show_key in ["task", "topic", "source"]:
             # Option 1: use the average score 
             # scores = [float(str(r["score"]).replace("N/A", "5")) for _, r in eval_item["parsed_result"].items()]
             # item_score = sum(scores) / len(scores)
@@ -76,7 +83,7 @@ for item in configs:
                     dim_scores[dim].append(item_score)
     
     # for the safety aspect 
-    if show_key == "aspect":
+    if show_key in ["aspect", "source"]:
         with open(item["eval_result_safety"]) as f:
             eval_data_safety = json.load(f)
         for eval_item in eval_data_safety:
@@ -104,6 +111,8 @@ if show_key == "aspect":
     # table = sorted(table, key=lambda x: x[-2], reverse=True)
     table = sorted(table, key=lambda x: x[1], reverse=True)
 elif show_key == "task":
+    table = sorted(table, key=lambda x: x[-2], reverse=True) 
+elif show_key == "source":
     table = sorted(table, key=lambda x: x[-2], reverse=True)
     
 print(tabulate(table, headers=headers, tablefmt="tsv", floatfmt=".2f"))

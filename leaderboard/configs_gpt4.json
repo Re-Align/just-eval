@@ -1,0 +1,137 @@
+[
+    {
+        "nickname": "gpt-4-0613",
+        "model_name": "openai/gpt-4-0613",
+        "output_file": "leaderboard/outputs/gpt-4-0613.to_eval.json",
+        "readme": "leaderboard/run_docs/gpts.md",
+        "evaluator": "gpt-4-0314",
+        "eval_result_general": "leaderboard/eval_results/gpt-4/gpt-4-0613.score_multi.gpt-4.json",
+        "eval_result_safety": "leaderboard/eval_results/gpt-4/gpt-4-0613.score_safety.chatgpt.json"
+    },
+    {
+        "nickname": "gpt-4-0314",
+        "model_name": "openai/gpt-4-0314",
+        "output_file": "leaderboard/outputs/gpt-4-0314.to_eval.json",
+        "readme": "leaderboard/run_docs/gpts.md",
+        "evaluator": "gpt-4-0314",
+        "eval_result_general": "leaderboard/eval_results/gpt-4/gpt-4-0314.score_multi.gpt-4.json",
+        "eval_result_safety": "leaderboard/eval_results/gpt-4/gpt-4-0314.score_safety.chatgpt.json"
+    },
+    {
+        "nickname": "gpt-3.5-turbo",
+        "model_name": "openai/gpt-3.5-turbo-0301",
+        "output_file": "leaderboard/outputs/gpt-3.5-turbo-0301.to_eval.json",
+        "readme": "leaderboard/run_docs/gpts.md",
+        "evaluator": "gpt-4-0314",
+        "eval_result_general": "leaderboard/eval_results/gpt-4/gpt-3.5-turbo-0301.score_multi.gpt-4.json",
+        "eval_result_safety": "leaderboard/eval_results/gpt-4/gpt-3.5-turbo-0301.score_safety.chatgpt.json"
+    }, 
+    {
+        "nickname": "Tulu2-DPO-70B",
+        "model_name": "tulu-2-dpo-70b",
+        "output_file": "leaderboard/outputs/tulu-2-dpo-70b.to_eval.json",
+        "readme": "leaderboard/run_docs/gpts.md",
+        "evaluator": "gpt-4-0314",
+        "eval_result_general": "leaderboard/eval_results/gpt-4/tulu-2-dpo-70b.score_multi.gpt-4.json",
+        "eval_result_safety": "leaderboard/eval_results/gpt-4/tulu-2-dpo-70b.score_safety.chatgpt.json"
+    },
+    {
+        "nickname": "Llama-2-70b-chat",
+        "model_name": "Llama-2-70b-chat-hf",
+        "output_file": "leaderboard/outputs/Llama-2-70b-chat-hf.to_eval.json",
+        "readme": "leaderboard/run_docs/gpts.md",
+        "evaluator": "gpt-4-0314",
+        "eval_result_general": "leaderboard/eval_results/gpt-4/Llama-2-70b-chat-hf.score_multi.gpt-4.json",
+        "eval_result_safety": "leaderboard/eval_results/gpt-4/Llama-2-70b-chat-hf.score_safety.chatgpt.json"
+    },
+    {
+        "nickname": "Llama-2-70b-chat-GPTQ",
+        "model_name": "Llama-2-70B-chat-GPTQ",
+        "output_file": "leaderboard/outputs/Llama-2-70B-chat-GPTQ.to_eval.json",
+        "readme": "leaderboard/run_docs/gpts.md",
+        "evaluator": "gpt-4-0314",
+        "eval_result_general": "leaderboard/eval_results/gpt-4/Llama-2-70B-chat-GPTQ.score_multi.gpt-4.json",
+        "eval_result_safety": "leaderboard/eval_results/gpt-4/Llama-2-70B-chat-GPTQ.score_safety.chatgpt.json"
+    },
+    {
+        "nickname": "URIAL=inst_1k-Llama-2-70b-hf",
+        "model_name": "URIAL=inst_1k-Llama-2-70b-hf",
+        "output_file": "leaderboard/outputs/URIAL=inst_1k-Llama-2-70b-hf.to_eval.json",
+        "readme": "leaderboard/run_docs/gpts.md",
+        "evaluator": "gpt-4-0314",
+        "eval_result_general": "leaderboard/eval_results/gpt-4/URIAL=inst_1k-Llama-2-70b-hf.score_multi.gpt-4.json",
+        "eval_result_safety": "leaderboard/eval_results/gpt-4/URIAL=inst_1k-Llama-2-70b-hf.score_safety.chatgpt.json"
+    },
+    {
+        "nickname": "URIAL=inst_1k-Llama-2-70B-GPTQ",
+        "model_name": "URIAL=inst_1k-Llama-2-70B-GPTQ",
+        "output_file": "leaderboard/outputs/URIAL=inst_1k-Llama-2-70B-GPTQ.to_eval.json",
+        "readme": "leaderboard/run_docs/gpts.md",
+        "evaluator": "gpt-4-0314",
+        "eval_result_general": "leaderboard/eval_results/gpt-4/URIAL=inst_1k-Llama-2-70B-GPTQ.score_multi.gpt-4.json",
+        "eval_result_safety": "leaderboard/eval_results/gpt-4/URIAL=inst_1k-Llama-2-70B-GPTQ.score_safety.chatgpt.json"
+    },
+    {
+        "nickname": "URIAL=inst_1k-Mistral-7B",
+        "model_name": "URIAL=inst_1k-Mistral-7B-v0.1",
+        "output_file": "leaderboard/outputs/URIAL=inst_1k-Mistral-7B-v0.1.to_eval.json",
+        "readme": "leaderboard/run_docs/gpts.md",
+        "evaluator": "gpt-4-0314",
+        "eval_result_general": "leaderboard/eval_results/gpt-4/URIAL=inst_1k-Mistral-7B-v0.1.score_multi.gpt-4.json",
+        "eval_result_safety": "leaderboard/eval_results/gpt-4/URIAL=inst_1k-Mistral-7B-v0.1.score_safety.chatgpt.json"
+    },
+    {
+        "nickname": "Tulu2-DPO-7B",
+        "model_name": "tulu-2-dpo-7b",
+        "output_file": "leaderboard/outputs/tulu-2-dpo-7b.to_eval.json",
+        "readme": "leaderboard/run_docs/gpts.md",
+        "evaluator": "gpt-4-0314",
+        "eval_result_general": "leaderboard/eval_results/gpt-4/tulu-2-dpo-7b.score_multi.gpt-4.json",
+        "eval_result_safety": "leaderboard/eval_results/gpt-4/tulu-2-dpo-7b.score_safety.chatgpt.json"
+    },
+    {
+        "nickname": "Llama-2-7b-chat",
+        "model_name": "meta-llama/Llama-2-7b-chat-hf",
+        "output_file": "leaderboard/outputs/Llama-2-7b-chat-hf.to_eval.json",
+        "readme": "leaderboard/run_docs/gpts.md",
+        "evaluator": "gpt-4-0314",
+        "eval_result_general": "leaderboard/eval_results/gpt-4/Llama-2-7b-chat-hf.score_multi.gpt-4.json",
+        "eval_result_safety": "leaderboard/eval_results/gpt-4/Llama-2-7b-chat-hf.score_safety.chatgpt.json"
+    },
+    {
+        "nickname": "Yi-34B-Chat",
+        "model_name": "Yi-34B-Chat",
+        "output_file": "leaderboard/outputs/Yi-34B-Chat.to_eval.json",
+        "readme": "leaderboard/run_docs/gpts.md",
+        "evaluator": "gpt-4-0314",
+        "eval_result_general": "leaderboard/eval_results/gpt-4/Yi-34B-Chat.score_multi.gpt-4.json",
+        "eval_result_safety": "leaderboard/eval_results/gpt-4/Yi-34B-Chat.score_safety.chatgpt.json"
+    },
+    {
+        "nickname": "Yi-6B-Chat",
+        "model_name": "Yi-6B-Chat",
+        "output_file": "leaderboard/outputs/Yi-6B-Chat.to_eval.json",
+        "readme": "leaderboard/run_docs/gpts.md",
+        "evaluator": "gpt-4-0314",
+        "eval_result_general": "leaderboard/eval_results/gpt-4/Yi-6B-Chat.score_multi.gpt-4.json",
+        "eval_result_safety": "leaderboard/eval_results/gpt-4/Yi-6B-Chat.score_safety.chatgpt.json"
+    },
+    {
+        "nickname": "Vicuna-7b",
+        "model_name": "vicuna-7b-v1.5",
+        "output_file": "leaderboard/outputs/vicuna-7b-v1.5.to_eval.json",
+        "readme": "leaderboard/run_docs/gpts.md",
+        "evaluator": "gpt-4-0314",
+        "eval_result_general": "leaderboard/eval_results/gpt-4/vicuna-7b-v1.5.score_multi.gpt-4.json",
+        "eval_result_safety": "leaderboard/eval_results/gpt-4/vicuna-7b-v1.5.score_safety.chatgpt.json"
+    },
+    {
+        "nickname": "Mistral-7B-Instruct",
+        "model_name": "Mistral-7B-Instruct-v0.1",
+        "output_file": "leaderboard/outputs/Mistral-7B-Instruct-v0.1.to_eval.json",
+        "readme": "leaderboard/run_docs/gpts.md",
+        "evaluator": "gpt-4-0314",
+        "eval_result_general": "leaderboard/eval_results/gpt-4/Mistral-7B-Instruct-v0.1.score_multi.gpt-4.json",
+        "eval_result_safety": "leaderboard/eval_results/gpt-4/Mistral-7B-Instruct-v0.1.score_safety.chatgpt.json"
+    }
+]

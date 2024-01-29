@@ -47,6 +47,14 @@ export OPENAI_API_KEY=<your secret key>
 bash leaderboard/scripts/run_eval.sh gpt-3.5-turbo-0301
 ```
 
+<!-- 
+bash leaderboard/scripts/run_eval.sh gpt-3.5-turbo-0301
+bash leaderboard/scripts/run_eval.sh Llama-2-70b-hf
+bash leaderboard/scripts/run_eval.sh Llama-2-7b-hf
+bash leaderboard/scripts/run_eval.sh tulu-2-dpo-70b
+bash leaderboard/scripts/run_eval.sh gpt-4-0613
+ -->
+
 
 
 ![Multiple Aspects](https://allenai.github.io/re-align/images/eval_2.png)

@@ -1,0 +1,11 @@
+[ 
+    {
+        "nickname": "gpt-3.5-turbo",
+        "model_name": "openai/gpt-3.5-turbo-0301",
+        "output_file": "leaderboard/outputs/gpt-3.5-turbo-0301.to_eval.json",
+        "readme": "leaderboard/run_docs/gpts.md",
+        "evaluator": "gpt-4-1105-preview",
+        "eval_result_general": "leaderboard/eval_results/gpt-4-turbo/gpt-3.5-turbo-0301.score_multi.json",
+        "eval_result_safety": "leaderboard/eval_results/gpt-4-turbo/gpt-3.5-turbo-0301.score_safety.json"
+    }    
+]

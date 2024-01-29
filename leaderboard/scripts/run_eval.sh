@@ -1,7 +1,7 @@
 model_name=$1 
 target_file="leaderboard/outputs/${model_name}.to_eval.json"
-     
-eval_folder="leaderboard/eval_results/gpt-4-turbo/${model_name}/"
+eval_parent_folder="leaderboard/eval_results/gpt-4-turbo/"
+eval_folder="${eval_parent_folder}/${model_name}/"
 mkdir -p $eval_folder
 
 start_gpu=0 # not useful, just a placeholder
@@ -35,4 +35,7 @@ done
 wait
 echo "All evaluation scripts have completed"
 # Run the merge results script after all evaluation scripts have completed
-# python evaluate/merge_results.py $eval_folder $model_name
+python leaderboard/scripts/merge_results.py $eval_folder $model_name.general
+python leaderboard/scripts/merge_results.py $eval_folder $model_name.safety
+mv $eval_folder/$model_name.general.json $eval_parent_folder/$model_name.score_multi.json 
+mv $eval_folder/$model_name.safety.json $eval_parent_folder/$model_name.score_safety.json
