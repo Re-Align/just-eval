@@ -12,10 +12,10 @@ from concurrent.futures import ThreadPoolExecutor
 from .utils import (
     better_json_loads,
     retry_handler, 
-    openai_chat_request, 
-    MULTI_SCORE_TEMPLATE,
-    SAFETY_SCORE_TEMPLATE, 
+    openai_chat_request
 )
+from _MULTI_SCORE_TEMPLATE import MULTI_SCORE_TEMPLATE
+from _SAFETY_SCORE_TEMPLATE import SAFETY_SCORE_TEMPLATE
 import numpy as np 
  
  
@@ -37,7 +37,7 @@ def get_args():
     
     # OpenAI Configs
     parser.add_argument("--api_key", type=str, default=None)
-    parser.add_argument("--model", type=str, default="gpt-4-0314")
+    parser.add_argument("--model", type=str, default="gpt-4-1106-preview") # gpt-4-0125-preview?
     parser.add_argument("--engine", type=str, default=None)
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--max_tokens", type=int, default=1024)
@@ -76,7 +76,7 @@ def report(results, mode, args):
                         if aspect not in scores:
                             scores[aspect] = []
                         if result["score"] == "N/A":
-                            result["score"] = 5.0
+                            result["score"] = 3.0 # when some aspects are not available, we use 3.0 as the default score
                         scores[aspect].append(float(result["score"]))
                 
                 cnt += 1
